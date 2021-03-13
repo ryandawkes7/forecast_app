@@ -21,7 +21,7 @@ const forecast = (latitude, longitude, callback) => {
       // Error undefined, data string with values
       callback(
         undefined,
-        `It is currently ${current.temperature} degrees out. There is a wind speed of ${current.wind_speed}mph!`
+        `It is currently ${current.temperature} degrees out, but it feels like ${current.feelslike} degrees. There is a wind speed of ${current.wind_speed}mph. The current humidity is ${current.humidity}%.`
       );
     }
   });
