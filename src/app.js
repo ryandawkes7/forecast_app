@@ -7,6 +7,9 @@ const geocode = require('./utils/geocode');
 // Initialise Express
 const app = express();
 
+// Set up port. If in deployment (i.e. with Heroku), use env variable for port. If in local developmen, or if 'process.env.PORT' cannot be found, use port 3000
+const port = process.env.PORT || 3000;
+
 // Setup templating engine 
 app.set('view engine', 'hbs');
 
@@ -109,6 +112,6 @@ app.get('*', (req, res) => {
 })
 
 // Server port
-app.listen(3000, () => {
-    console.log('The server is running on port 3000')
+app.listen(port, () => {
+    console.log(`The server is running on port ${port}`)
 });

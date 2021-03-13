@@ -16,7 +16,7 @@ weatherForm.addEventListener("submit", (e) => {
   messageTwo.textContent = "";
 
   // Use 'fetch()' on self-created API to retrieve weather data for the location the user enters
-  fetch(`http://localhost:3000/weather?address=${location}`).then((res) => {
+  fetch(`/weather?address=${location}`).then((res) => {
     // Async JSON data retreival and parsing
     res.json().then((data) => {
       // Error handling for no errors in data retreival
